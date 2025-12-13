@@ -37,7 +37,7 @@ export default function StandingsClient({ data }: StandingsClientProps) {
           >
             <Link
               href="/playoffs"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-ui uppercase tracking-wider text-sm transition-all bg-comets-yellow/20 text-comets-yellow border border-comets-yellow/40 hover:bg-comets-yellow/30 hover:border-comets-yellow/60 hover:shadow-[0_0_15px_rgba(244,208,63,0.3)] focus:outline-none focus:ring-2 focus:ring-comets-yellow/50 focus:ring-offset-2 focus:ring-offset-black"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-ui uppercase tracking-wider text-sm transition-all bg-comets-yellow/20 text-comets-yellow border border-comets-yellow/40 hover:bg-comets-yellow/30 hover:border-comets-yellow/60 hover:shadow-[0_0_15px_rgba(244,208,63,0.3)] focus:outline-none"
             >
               <Trophy size={16} />
               <span>View Playoffs</span>

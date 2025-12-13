@@ -171,7 +171,7 @@ export default function ScheduleView({ matchesByWeek, weeks, initialWeek }: Sche
               >
                 <Link
                   href="/playoffs"
-                  className="relative flex items-center gap-2 px-4 py-2 rounded-full font-ui uppercase tracking-wider text-xs transition-all whitespace-nowrap bg-comets-yellow/20 text-comets-yellow border border-comets-yellow/40 hover:bg-comets-yellow/30 hover:border-comets-yellow/60 focus:outline-none focus:ring-2 focus:ring-comets-yellow/50"
+                  className="relative flex items-center gap-2 px-4 py-2 rounded-full font-ui uppercase tracking-wider text-xs transition-all whitespace-nowrap bg-comets-yellow/20 text-comets-yellow border border-comets-yellow/40 hover:bg-comets-yellow/30 hover:border-comets-yellow/60 focus:outline-none"
                 >
                   <Trophy size={14} />
                   <span>Playoffs</span>

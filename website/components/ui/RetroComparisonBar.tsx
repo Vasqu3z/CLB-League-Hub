@@ -50,7 +50,8 @@ export default function RetroComparisonBar({
   // Helper to determine boolean value
   const isTruthy = (value: number | string): boolean => {
     if (typeof value === "string") {
-      return value.toLowerCase() === "yes" || value === "1" || value.toLowerCase() === "true";
+      const lower = value.toLowerCase();
+      return lower === "yes" || lower === "1" || lower === "true" || lower === "enabled";
     }
     return value === 1 || value > 0;
   };
