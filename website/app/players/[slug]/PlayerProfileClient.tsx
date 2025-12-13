@@ -332,6 +332,7 @@ export default function PlayerProfileClient({
                     value={attributes.fieldingOverall}
                     color="#2ECC71"
                     icon={Shield}
+                    detail={attributes.ability}
                     delay={0.1}
                   />
                   <AttributeBar
@@ -385,12 +386,6 @@ export default function PlayerProfileClient({
                     <DetailRow label="Throwing Speed" value={attributes.throwingSpeed} />
                     <DetailRow label="Speed" value={attributes.speed} />
                     <DetailRow label="Bunting" value={attributes.bunting} />
-                    {attributes.ability && (
-                      <div className="flex justify-between items-center text-white/60 pt-2 mt-2 border-t border-white/10">
-                        <span className="text-comets-purple">Special Ability</span>
-                        <span className="text-white px-2 py-0.5 bg-comets-purple/20 rounded border border-comets-purple/30">{attributes.ability}</span>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>

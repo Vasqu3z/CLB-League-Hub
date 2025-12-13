@@ -107,9 +107,9 @@ export default function VersusCard({ home, away, date, time, isFinished, compact
           )}>
             <div className="flex items-center gap-2 min-w-0">
               {away.logoUrl ? (
-                <Image src={away.logoUrl} alt="" width={20} height={20} className="object-contain flex-shrink-0" />
+                <Image src={away.logoUrl} alt="" width={32} height={32} className="object-contain flex-shrink-0 w-8 h-8" />
               ) : (
-                <div className="w-5 h-5 rounded flex items-center justify-center text-[10px] font-ui font-bold flex-shrink-0" style={{ backgroundColor: `${away.logoColor}30`, color: away.logoColor }}>
+                <div className="w-8 h-8 rounded flex items-center justify-center text-xs font-ui font-bold flex-shrink-0" style={{ backgroundColor: `${away.logoColor}30`, color: away.logoColor }}>
                   {away.code[0]}
                 </div>
               )}
@@ -135,9 +135,9 @@ export default function VersusCard({ home, away, date, time, isFinished, compact
           )}>
             <div className="flex items-center gap-2 min-w-0">
               {home.logoUrl ? (
-                <Image src={home.logoUrl} alt="" width={20} height={20} className="object-contain flex-shrink-0" />
+                <Image src={home.logoUrl} alt="" width={32} height={32} className="object-contain flex-shrink-0 w-8 h-8" />
               ) : (
-                <div className="w-5 h-5 rounded flex items-center justify-center text-[10px] font-ui font-bold flex-shrink-0" style={{ backgroundColor: `${home.logoColor}30`, color: home.logoColor }}>
+                <div className="w-8 h-8 rounded flex items-center justify-center text-xs font-ui font-bold flex-shrink-0" style={{ backgroundColor: `${home.logoColor}30`, color: home.logoColor }}>
                   {home.code[0]}
                 </div>
               )}

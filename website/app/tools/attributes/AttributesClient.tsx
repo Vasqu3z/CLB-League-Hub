@@ -232,6 +232,7 @@ export default function AttributesClient({ players }: AttributesClientProps) {
                       name: p.name,
                       color: p.color,
                       value: p[attr.key as keyof PlayerAttributeData] as number,
+                      imageUrl: p.imageUrl,
                     }))}
                   />
                 ))}
@@ -287,6 +288,7 @@ export default function AttributesClient({ players }: AttributesClientProps) {
                       name: p.name,
                       color: p.color,
                       value: p[attr.key as keyof PlayerAttributeData] as number,
+                      imageUrl: p.imageUrl,
                     }))}
                   />
                 ))}

@@ -231,16 +231,16 @@ export default function LeadersClient({
     switch (category) {
       case "batting":
         return [
-          { key: "avg", name: "Batting Average", icon: Target, data: battingLeaders.avg },
+          { key: "avg", name: "AVG", icon: Target, data: battingLeaders.avg },
           { key: "h", name: "Hits", icon: Activity, data: battingLeaders.hits },
           { key: "hr", name: "Home Runs", icon: Zap, data: battingLeaders.hr },
-          { key: "rbi", name: "Runs Batted In", icon: TrendingUp, data: battingLeaders.rbi },
+          { key: "rbi", name: "RBI", icon: TrendingUp, data: battingLeaders.rbi },
           { key: "slg", name: "Slugging", icon: Trophy, data: battingLeaders.slg },
           { key: "ops", name: "OPS", icon: Trophy, data: battingLeaders.ops },
         ];
       case "pitching":
         return [
-          { key: "ip", name: "Innings Pitched", icon: Activity, data: pitchingLeaders.ip },
+          { key: "ip", name: "Innings", icon: Activity, data: pitchingLeaders.ip },
           { key: "w", name: "Wins", icon: Trophy, data: pitchingLeaders.wins },
           { key: "sv", name: "Saves", icon: Zap, data: pitchingLeaders.saves },
           { key: "era", name: "ERA", icon: Target, data: pitchingLeaders.era },

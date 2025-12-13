@@ -61,6 +61,12 @@ interface TeamStats {
   };
 }
 
+// Extended PlayerStats with image data from registry
+type EnrichedPlayer = PlayerStats & {
+  imageUrl?: string;
+  slug?: string;
+};
+
 interface TeamDetailClientProps {
   teamName: string;
   teamCode: string;
@@ -71,7 +77,7 @@ interface TeamDetailClientProps {
   wins: number;
   losses: number;
   streak: string;
-  roster: PlayerStats[];
+  roster: EnrichedPlayer[];
   schedule: Matchup[];
   stats: TeamStats | null;
 }

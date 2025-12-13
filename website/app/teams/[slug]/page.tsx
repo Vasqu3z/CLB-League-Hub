@@ -152,8 +152,10 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
     })
     .sort((a, b) => a.week - b.week);
 
-  // Get team stats
-  const stats = teamStatsData.find(s => s.teamName === team.teamName) || null;
+  // Get team stats (case-insensitive match)
+  const stats = teamStatsData.find(s =>
+    s.teamName.toLowerCase() === team.teamName.toLowerCase()
+  ) || null;
 
   return (
     <TeamDetailClient

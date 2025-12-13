@@ -157,6 +157,7 @@ export default function CompareClient({ players }: CompareClientProps) {
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
+                  style={{ transform: 'scaleX(-1)' }}
                 />
               </motion.div>
             )}

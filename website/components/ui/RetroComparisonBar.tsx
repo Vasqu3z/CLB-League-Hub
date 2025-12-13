@@ -21,6 +21,7 @@ export interface ComparisonPlayer {
   name: string;
   color: string;
   value: number | string;
+  imageUrl?: string;
 }
 
 interface RetroComparisonBarProps {
@@ -99,9 +100,6 @@ export default function RetroComparisonBar({
         <h4 className="font-display text-lg uppercase tracking-wide text-white">
           {statName}
         </h4>
-        <span className="font-mono text-xs text-white/40 uppercase tracking-widest">
-          {statKey}
-        </span>
       </div>
 
       {/* Boolean comparison - Yes/No badges */}
@@ -118,14 +116,27 @@ export default function RetroComparisonBar({
                 transition={{ delay: delay + idx * 0.1 }}
                 className="flex items-center gap-3"
               >
-                {/* Color dot */}
-                <motion.div
-                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                  style={{
-                    backgroundColor: player.color,
-                    boxShadow: hasAbility ? `0 0 10px ${player.color}` : "none",
-                  }}
-                />
+                {/* Player portrait or color dot fallback */}
+                {player.imageUrl ? (
+                  <div
+                    className="w-6 h-6 rounded-full overflow-hidden border-2 flex-shrink-0"
+                    style={{ borderColor: player.color }}
+                  >
+                    <img
+                      src={player.imageUrl}
+                      alt={player.name}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <motion.div
+                    className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                    style={{
+                      backgroundColor: player.color,
+                      boxShadow: hasAbility ? `0 0 10px ${player.color}` : "none",
+                    }}
+                  />
+                )}
 
                 {/* Player name */}
                 <span
@@ -137,7 +148,7 @@ export default function RetroComparisonBar({
                   {player.name}
                 </span>
 
-                {/* Yes/No badge */}
+                {/* Yes/No badge - Green for Yes, Red for No */}
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -146,7 +157,7 @@ export default function RetroComparisonBar({
                     "flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-ui uppercase tracking-wide",
                     hasAbility
                       ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                      : "bg-white/5 text-white/40 border border-white/10"
+                      : "bg-red-500/20 text-red-400 border border-red-500/30"
                   )}
                 >
                   {hasAbility ? (
@@ -183,20 +194,42 @@ export default function RetroComparisonBar({
               >
                 {/* Player row */}
                 <div className="flex items-center gap-3 mb-1.5">
-                  {/* Color dot */}
-                  <motion.div
-                    className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                    style={{
-                      backgroundColor: player.color,
-                      boxShadow: playerIsWinner ? `0 0 10px ${player.color}` : "none",
-                    }}
-                    animate={
-                      playerIsWinner
-                        ? { scale: [1, 1.3, 1], opacity: [0.8, 1, 0.8] }
-                        : {}
-                    }
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  />
+                  {/* Player portrait or color dot fallback */}
+                  {player.imageUrl ? (
+                    <motion.div
+                      className="w-6 h-6 rounded-full overflow-hidden border-2 flex-shrink-0"
+                      style={{
+                        borderColor: player.color,
+                        boxShadow: playerIsWinner ? `0 0 10px ${player.color}` : "none",
+                      }}
+                      animate={
+                        playerIsWinner
+                          ? { scale: [1, 1.1, 1] }
+                          : {}
+                      }
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <img
+                        src={player.imageUrl}
+                        alt={player.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                      style={{
+                        backgroundColor: player.color,
+                        boxShadow: playerIsWinner ? `0 0 10px ${player.color}` : "none",
+                      }}
+                      animate={
+                        playerIsWinner
+                          ? { scale: [1, 1.3, 1], opacity: [0.8, 1, 0.8] }
+                          : {}
+                      }
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    />
+                  )}
 
                   {/* Player name */}
                   <span
